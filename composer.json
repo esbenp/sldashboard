@@ -23,7 +23,8 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "xinax/laravel-gettext": "3.*"
+        "xinax/laravel-gettext": "3.*",
+        "laravel/socialite": "2.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
