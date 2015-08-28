@@ -1,7 +1,6 @@
 {
     "name": "spotonlive/sldashboard",
-
-    "description": "Web project dashboard in Laravel 5.1 and NodeJS",
+    "description": "Dashboard screen in Laravel 5.1 and NodeJS",
     "keywords": ["dashboard", "laravel", "nodejs"],
     "license": "MIT",
     "type": "library",
@@ -23,7 +22,8 @@
     },
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.1.*"
+        "laravel/framework": "5.1.*",
+        "xinax/laravel-gettext": "3.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -144,6 +144,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Third party Dependencies
+         */
+        Xinax\LaravelGettext\LaravelGettextServiceProvider::class,
     ],
 
     /*
