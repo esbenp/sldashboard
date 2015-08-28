@@ -152,6 +152,7 @@ return [
 
         // Services
         'App\Providers\Service\GitHubServiceProvider',
+        'App\Providers\Service\InstallationServiceProvider',
     ],
 
     /*
