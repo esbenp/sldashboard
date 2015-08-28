@@ -148,6 +148,10 @@ return [
          * Third party Dependencies
          */
         Xinax\LaravelGettext\LaravelGettextServiceProvider::class,
+        'Laravel\Socialite\SocialiteServiceProvider',
+
+        // Services
+        'App\Providers\Service\GitHubServiceProvider',
     ],
 
     /*
@@ -196,6 +200,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 
+        'Socialize' => 'Laravel\Socialite\Facades\Socialite',
     ],
 
 ];
