@@ -9,9 +9,14 @@
 
     <!-- Bootstrap -->
     <link href="{{ URL::asset('assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/theme.css') }}" rel="stylesheet">
 </head>
 <body>
-@yield('content')
+
+    <div class="container-fluid">
+        @yield('content')
+    </div>
 
 <script src="{{ URL::asset('assets/jquery/jquery.min.js') }}"></script>
 <script src="{{ URL::asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
