@@ -8,6 +8,6 @@ Dashboard written in Laravel 5.1 and NodeJS.
 * Go to [**Getting started**](/docGo to s/2.Getting started.md)
 
 ## Organization & authors
-* [**spotonlive**](https://git* hub.com/spotonlive)
+* [**spotonlive**](https://github.com/spotonlive)
 * [**stourmann**](https://github.com/stoumann)
 * [**nikolajpetersen**](https://github.com/Nikolajpetersen)
