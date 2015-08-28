@@ -17,6 +17,10 @@ Route::get('/', function () {
 
 Route::get('/dashboard', ['middleware' => 'auth', 'DashboardController@index']);
 
+Route::get('layout',function(){
+    return view('dashboard.index');
+});
+
 /*
  * Auth
  */
