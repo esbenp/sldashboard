@@ -1,9 +1,26 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "spotonlive/sldashboard",
+
+    "description": "Web project dashboard in Laravel 5.1 and NodeJS",
+    "keywords": ["dashboard", "laravel", "nodejs"],
     "license": "MIT",
-    "type": "project",
+    "type": "library",
+    "homepage": "https://github.com/spotonlive/sldashboard",
+    "authors": [
+        {
+            "name": "Nikolaj Løvenhardt Petersen",
+            "email": "np@spotonmarketing.dk"
+        },
+        {
+            "name": "Mark Stourmann",
+            "email": "mas@spotonmarketing.dk"
+        }
+    ],
+    "extra": {
+        "branch-alias": {
+            "dev-master": "master-dev"
+        }
+    },
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*"
