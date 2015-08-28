@@ -9,7 +9,7 @@
                     <span class="lead">Stats</span>
                 </div>
                 <div class="panel-body">
-                    GRAPH
+                    GRAPHS
                 </div>
                 <div class="panel-footer">Bla bla bla</div>
             </div>
@@ -21,16 +21,36 @@
                     <span class="label label-danger pull-right">Danger</span>
                 </div>
                 <div class="panel-body">
-                    <b>Mark Stoumann</b><br />
-                    Commit info ... bla bla bla<hr />
-                    <b>Mark Stoumann</b><br />
-                    Commit info ... bla bla bla<hr />
-                    <b>Nikolaj Petersen</b><br />
-                    Commit info ... bla bla bla<hr />
-                    <b>Nikolaj Petersen</b><br />
-                    Commit info ... bla bla bla<hr />
-                    <b>Mark Stoumann</b><br />
-                    Commit info ... bla bla bla
+                    <div class="row">
+                        <div class="col-md-2">
+                            IMG
+                        </div>
+                        <div class="col-md-10">
+                            <b>Mark Stoumann</b>
+                            <span class="show">Commit info... bla bla bla...</span>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-2">
+                            IMG
+                        </div>
+                        <div class="col-md-10">
+                            <b>Nikolaj Petersen</b>
+                            <span class="show">Commit info... bla bla bla...</span>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-2">
+                            IMG
+                        </div>
+                        <div class="col-md-10">
+                            <b>Mark Stoumann</b>
+                            <span class="show">Commit info... bla bla bla...</span>
+                        </div>
+                    </div>
+                    <hr />
                 </div>
                 <div class="panel-footer clearfix">
                     <div class="pull-left">
