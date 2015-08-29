@@ -19,6 +19,16 @@
                 <ul class="nav navbar-nav">
                     <li class="text">
                         <span>
+                            <span class="fa fa-map-marker"></span>&nbsp; {{\App\Facades\Helper\ConfigHelperFacade::getSiteName()}}
+                        </span>
+                    </li>
+                    <li class="text">
+                        <span>
+                            <span class="fa fa-link"></span>&nbsp; {{\App\Facades\Helper\ConfigHelperFacade::getSiteUrl()}}
+                        </span>
+                    </li>
+                    <li class="text">
+                        <span>
                             <span class="fa fa-clock-o"></span>&nbsp; <span class="server-time">00:00</span>
                         </span>
                     </li>

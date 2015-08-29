@@ -154,6 +154,9 @@ return [
         'App\Providers\Service\GitHubServiceProvider',
         'App\Providers\Service\InstallationServiceProvider',
         'App\Providers\Service\UserServiceProvider',
+
+        // Helpers
+        'App\Providers\Helper\ConfigHelperProvider',
     ],
 
     /*

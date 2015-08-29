@@ -55,3 +55,7 @@ body{
     font-weight: bold;
     padding-top: 16px;
 }
+
+.top-bar ul li.text {
+    margin-right: 15px;
+}
