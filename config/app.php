@@ -203,6 +203,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
 
         'Socialize' => 'Laravel\Socialite\Facades\Socialite',
+        'Uuid' => 'Webpatser\Uuid\Uuid',
     ],
 
 ];

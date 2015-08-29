@@ -19,7 +19,7 @@
                 <ul class="nav navbar-nav">
                     <li class="text">
                         <span>
-                            <span class="fa fa-clock-o"></span>&nbsp; 19:57
+                            <span class="fa fa-clock-o"></span>&nbsp; <span class="server-time">00:00</span>
                         </span>
                     </li>
                 </ul>
@@ -63,61 +63,63 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="panel panel-danger">
-                    <div class="panel-heading">
-                        <span class="lead">Latest Commits</span>
-                        <span class="label label-danger pull-right">Danger</span>
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-2">
-                                IMG
+                @if(isset($gitHub))
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            <span class="lead">{{_('Latest Commits')}}</span>
+                            <span class="label label-danger pull-right">Danger</span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    IMG
+                                </div>
+                                <div class="col-md-10">
+                                    <b>Mark Stoumann</b>
+                                    <span class="show">Commit info... bla bla bla...</span>
+                                </div>
                             </div>
-                            <div class="col-md-10">
-                                <b>Mark Stoumann</b>
-                                <span class="show">Commit info... bla bla bla...</span>
+                            <hr />
+                            <div class="row">
+                                <div class="col-md-2">
+                                    IMG
+                                </div>
+                                <div class="col-md-10">
+                                    <b>Nikolaj Petersen</b>
+                                    <span class="show">Commit info... bla bla bla...</span>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row">
+                                <div class="col-md-2">
+                                    IMG
+                                </div>
+                                <div class="col-md-10">
+                                    <b>Mark Stoumann</b>
+                                    <span class="show">Commit info... bla bla bla...</span>
+                                </div>
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="panel-footer clearfix">
+                            <div class="pull-left">
+                                <i class="fa fa-github"></i> <span class="text-muted">spotonlive/sldashboard</span>
+                            </div>
+                            <div class="pull-right">
+                                <i class="fa fa-clock-o"></i> 28-08-15 13:43
                             </div>
                         </div>
-                        <hr />
-                        <div class="row">
-                            <div class="col-md-2">
-                                IMG
-                            </div>
-                            <div class="col-md-10">
-                                <b>Nikolaj Petersen</b>
-                                <span class="show">Commit info... bla bla bla...</span>
-                            </div>
-                        </div>
-                        <hr />
-                        <div class="row">
-                            <div class="col-md-2">
-                                IMG
-                            </div>
-                            <div class="col-md-10">
-                                <b>Mark Stoumann</b>
-                                <span class="show">Commit info... bla bla bla...</span>
-                            </div>
-                        </div>
-                        <hr />
                     </div>
-                    <div class="panel-footer clearfix">
-                        <div class="pull-left">
-                            <i class="fa fa-github"></i> <span class="text-muted">spotonlive/sldashboard</span>
+                @else
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            <span class="lead">{{_('Latest Commits')}}</span>
                         </div>
-                        <div class="pull-right">
-                            <i class="fa fa-clock-o"></i> 28-08-15 13:43
+                        <div class="panel-body">
+                            {!! sprintf(_('Please click <a href="%s">here</a> to connect to your Git account'), URL::to('/configure')) !!}
                         </div>
                     </div>
-                </div>
-
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <span class="lead">Andet tis</span>
-                    </div>
-                    <div class="panel-footer">
-                        <i class="fa fa-home"></i> Panel footer
-                    </div>
-                </div>
+                @endif
             </div>
         </div>
     </div>

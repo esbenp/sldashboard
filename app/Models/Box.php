@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Webpatser\Uuid\Uuid;
 
-class Config extends Model
+class Box extends Model
 {
     /**
      * Disable auto increment
