@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Hash;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -23,11 +24,9 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
-    /**
-     * Create a new authentication controller instance.
-     *
-     * @return void
-     */
+    // Redirect path after successful login
+    protected $redirectPath = '/';
+
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'getLogout']);
@@ -59,7 +58,7 @@ class AuthController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'password' => Hash::make($data['password']),
         ]);
     }
 }

@@ -5,13 +5,13 @@ body{
 }
 
 /* CUSTOM BOOTSTRAP CLASSES */
-.panel{
+.panel {
     border:1px solid #e4e5e7;
     border-radius:0;
     -webkit-box-shadow: none;
     box-shadow: none;
 }
-.panel .panel-heading{
+.panel .panel-heading {
     background-color:#ffffff;
     border:none;
     padding:15px 15px 0 15px;
@@ -23,16 +23,17 @@ body{
     border-radius:0;
 }
 
-.lead{
+.lead {
     color:#777;
     text-transform:uppercase;
     font-size:15px;
     font-weight:500;
 }
 
-.list-group-item{
+.list-group-item {
     border:1px solid #e4e5e7;
 }
-.list-group-item-heading{
+
+.list-group-item-heading {
     font-size:14px;
 }

@@ -13,15 +13,24 @@
 
 Route::get('/', 'DashboardController@validateInstallation');
 
-Route::get('/dashboard', ['middleware' => 'auth', 'DashboardController@index']);
-
 Route::get('layout',function(){
     return view('dashboard.index');
 });
 
-/*
- * Auth
- */
+// Installation
+Route::group(['prefix' => 'install'], function () {
+    Route::get('/', 'InstallationController@config');
+    Route::post('/', 'InstallationController@configStore');
+
+    Route::get('/user', 'InstallationController@user');
+    Route::post('/user', 'InstallationController@userStore');
+});
+
+// Dashboard
+Route::get('/dashboard', ['middleware' => 'auth', 'uses' => 'DashboardController@index']);
+
+
+// Authentication
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');

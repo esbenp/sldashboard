@@ -21,6 +21,6 @@ class DashboardController extends Controller
             return redirect('/dashboard');
         }
 
-        die('Must install');
+        return redirect('/install');
     }
 }
