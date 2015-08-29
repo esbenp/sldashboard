@@ -4,6 +4,8 @@
     <span class="lead">{{_('Website information')}}</span><br />
     <br />
 
+    @include('installation.progress', ['progress' => 0])
+
     <form action="" method="post">
         {!! csrf_field() !!}
 

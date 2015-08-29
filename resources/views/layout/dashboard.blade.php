@@ -14,9 +14,7 @@
 </head>
 <body>
 
-    <div class="container-fluid">
-        @yield('content')
-    </div>
+@yield('content')
 
 <script src="{{ URL::asset('assets/jquery/jquery.min.js') }}"></script>
 <script src="{{ URL::asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>

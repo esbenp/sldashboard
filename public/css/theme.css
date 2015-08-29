@@ -1,7 +1,10 @@
 body{
     background:#f1f3f6;
-    padding:20px 0;
     color:#666666;
+}
+
+.dashboard {
+    padding: 0 30px 30px;
 }
 
 /* CUSTOM BOOTSTRAP CLASSES */
@@ -36,4 +39,19 @@ body{
 
 .list-group-item-heading {
     font-size:14px;
+}
+
+/*
+ * Top bar
+ */
+.top-bar {
+    font-size: 9pt;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.top-bar ul li.text > span {
+    display: inline-block;
+    font-weight: bold;
+    padding-top: 16px;
 }
