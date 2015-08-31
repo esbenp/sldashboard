@@ -11,5 +11,5 @@ Dashboard written in Laravel 5.1 and NodeJS.
 
 ## Organization & authors
 * [**spotonlive**](https://github.com/spotonlive)
-* [**stourmann**](https://github.com/stoumann)
+* [**stoumann**](https://github.com/stoumann)
 * [**nikolajpetersen**](https://github.com/Nikolajpetersen)

@@ -61,7 +61,7 @@
     <!-- Dashboard -->
     <div class="container-fluid dashboard">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <span class="lead">Stats</span>
@@ -72,7 +72,18 @@
                     <div class="panel-footer">Bla bla bla</div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="lead">Stats</span>
+                    </div>
+                    <div class="panel-body">
+                        GRAPHS
+                    </div>
+                    <div class="panel-footer">Bla bla bla</div>
+                </div>
+            </div>
+            <div class="col-md-4">
                 @if(isset($gitHub))
                     <div class="panel panel-danger">
                         <div class="panel-heading">
