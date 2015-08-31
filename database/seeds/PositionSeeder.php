@@ -22,6 +22,11 @@ class PositionSeeder extends Seeder
 
         DB::table('positions')->insert([
             'id' => Uuid::generate(4),
+            'name' => 'center',
+        ]);
+
+        DB::table('positions')->insert([
+            'id' => Uuid::generate(4),
             'name' => 'right',
         ]);
 
