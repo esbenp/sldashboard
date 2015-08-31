@@ -151,6 +151,7 @@ return [
         'Laravel\Socialite\SocialiteServiceProvider',
 
         // Services
+        'App\Providers\Service\BoxServiceProvider',
         'App\Providers\Service\GitHubServiceProvider',
         'App\Providers\Service\InstallationServiceProvider',
         'App\Providers\Service\UserServiceProvider',
@@ -209,7 +210,8 @@ return [
         'Uuid' => 'Webpatser\Uuid\Uuid',
 
         // Facade alias
-        'ConfigHelper' => '\App\Facades\Helper\ConfigHelperFacade'
+        'BoxService' => 'App\Facades\Service\BoxServiceFacade',
+        'ConfigHelper' => '\App\Facades\Helper\ConfigHelperFacade',
     ],
 
 ];

@@ -1,11 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models\Box;
 
 use Illuminate\Database\Eloquent\Model;
-use Webpatser\Uuid\Uuid;
 
-class Box extends Model
+class Type extends Model
 {
     /**
      * Disable auto increment
@@ -21,5 +20,10 @@ class Box extends Model
         static::creating(function ($model) {
             $model->{$model->getKeyName()} = Uuid::generate(4);
         });
+    }
+
+    public function boxes()
+    {
+        return $this->hasMany('App\Models\Box\Box', 'type_id');
     }
 }

@@ -32,6 +32,7 @@ Route::get('/dashboard', ['middleware' => 'auth', 'uses' => 'DashboardController
 // Configuration
 Route::group(['prefix' => 'configuration', 'middleware' => 'auth'], function () {
     Route::get('/', 'ConfigurationController@index');
+    Route::get('/dashboard', 'ConfigurationController@dashboard');
 });
 
 // Authentication
