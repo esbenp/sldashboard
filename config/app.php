@@ -207,6 +207,9 @@ return [
 
         'Socialize' => 'Laravel\Socialite\Facades\Socialite',
         'Uuid' => 'Webpatser\Uuid\Uuid',
+
+        // Facade alias
+        'ConfigHelper' => '\App\Facades\Helper\ConfigHelperFacade'
     ],
 
 ];

@@ -19,12 +19,12 @@
                 <ul class="nav navbar-nav">
                     <li class="text">
                         <span>
-                            <span class="fa fa-map-marker"></span>&nbsp; {{\App\Facades\Helper\ConfigHelperFacade::getSiteName()}}
+                            <span class="fa fa-map-marker"></span>&nbsp; {{ConfigHelper::getSiteName()}}
                         </span>
                     </li>
                     <li class="text">
                         <span>
-                            <span class="fa fa-link"></span>&nbsp; {{\App\Facades\Helper\ConfigHelperFacade::getSiteUrl()}}
+                            <span class="fa fa-link"></span>&nbsp; {{ConfigHelper::getSiteUrl()}}
                         </span>
                     </li>
                     <li class="text">
@@ -41,7 +41,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="#" title="{{_('Configure')}}">
+                                <a href="{{URL::to('configuration')}}" title="{{_('Configure')}}">
                                     <span class="fa fa-cog"></span>&nbsp; {{_('Configure')}}
                                 </a>
                             </li>
@@ -126,7 +126,7 @@
                             <span class="lead">{{_('Latest Commits')}}</span>
                         </div>
                         <div class="panel-body">
-                            {!! sprintf(_('Please click <a href="%s">here</a> to connect to your Git account'), URL::to('/configure')) !!}
+                            {!! sprintf(_('Please click <a href="%s">here</a> to connect to your Git account'), URL::to('configuration')) !!}
                         </div>
                     </div>
                 @endif

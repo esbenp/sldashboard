@@ -29,6 +29,10 @@ Route::group(['prefix' => 'install'], function () {
 // Dashboard
 Route::get('/dashboard', ['middleware' => 'auth', 'uses' => 'DashboardController@index']);
 
+// Configuration
+Route::group(['prefix' => 'configuration', 'middleware' => 'auth'], function () {
+    Route::get('/', 'ConfigurationController@index');
+});
 
 // Authentication
 Route::get('auth/login', 'Auth\AuthController@getLogin');
