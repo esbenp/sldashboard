@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Facades\Service\GitHubServiceFacade;
-use App\Facades\Service\InstallationServiceFacade;
-use App\Facades\Service\UserServiceFacade;
+use App\Service\GitHubService;
+use App\Service\InstallationService;
+use App\Service\UserService;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -12,9 +12,28 @@ use App\Http\Controllers\Controller;
 
 class InstallationController extends Controller
 {
-    public function config(Request $request)
+    /** @var InstallationService */
+    protected $installationService;
+
+    /** @var UserService */
+    protected $userService;
+
+    /** @var GitHubService */
+    protected $gitHubService;
+
+    public function __construct(
+        InstallationService $installationService,
+        UserService $userService,
+        GitHubService $gitHubService
+    ) {
+        $this->installationService = $installationService;
+        $this->userService = $userService;
+        $this->gitHubService = $gitHubService;
+    }
+
+    public function config()
     {
-        if (InstallationServiceFacade::getInstallation()) {
+        if ($this->installationService->getInstallation()) {
             return redirect('/install/user');
         }
 
@@ -25,7 +44,7 @@ class InstallationController extends Controller
     {
         $content = $request->all();
 
-        if (!InstallationServiceFacade::create($content)) {
+        if (!$this->installationService->create($content)) {
             // Config was not created
             return view('installation.config', ['data' => $content]);
         }
@@ -37,7 +56,7 @@ class InstallationController extends Controller
 
     public function user()
     {
-        if (UserServiceFacade::getUser()) {
+        if ($this->userService->getUser()) {
             // Already created user
             return redirect('/');
         }
@@ -49,19 +68,19 @@ class InstallationController extends Controller
     {
         $content = $request->all();
 
-        if (!UserServiceFacade::create($content)) {
+        if (!$this->userService->create($content)) {
             // User was not created
             return view('installation.user');
         }
 
         // Success
-        InstallationServiceFacade::setInstalled(true);
+        $this->installationService->setInstalled(true);
 
         return redirect('/');
     }
 
     public function github()
     {
-        return GitHubServiceFacade::login();
+        return $this->gitHubService->login();
     }
 }

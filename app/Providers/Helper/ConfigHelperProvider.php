@@ -13,6 +13,6 @@ class ConfigHelperProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('configHelper', '\App\Helper\ConfigHelper');
+        $this->app->bind('App\Provider\Helper\ConfigHelperProvider', 'App\Helper\ConfigHelper');
     }
 }

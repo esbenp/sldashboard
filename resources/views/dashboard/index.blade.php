@@ -19,12 +19,12 @@
                 <ul class="nav navbar-nav">
                     <li class="text">
                         <span>
-                            <span class="fa fa-map-marker"></span>&nbsp; {{ConfigHelper::getSiteName()}}
+                            <span class="fa fa-map-marker"></span>&nbsp; {{configHelper::getSiteName()}}
                         </span>
                     </li>
                     <li class="text">
                         <span>
-                            <span class="fa fa-link"></span>&nbsp; {{ConfigHelper::getSiteUrl()}}
+                            <span class="fa fa-link"></span>&nbsp; {{configHelper::getSiteUrl()}}
                         </span>
                     </li>
                     <li class="text">

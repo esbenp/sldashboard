@@ -150,6 +150,10 @@ return [
         Xinax\LaravelGettext\LaravelGettextServiceProvider::class,
         'Laravel\Socialite\SocialiteServiceProvider',
 
+        // Controllers
+        'App\Providers\Controller\DashboardControllerProvider',
+        'App\Providers\Controller\InstallationControllerProvider',
+
         // Services
         'App\Providers\Service\BoxServiceProvider',
         'App\Providers\Service\GitHubServiceProvider',
@@ -209,9 +213,8 @@ return [
         'Socialize' => 'Laravel\Socialite\Facades\Socialite',
         'Uuid' => 'Webpatser\Uuid\Uuid',
 
-        // Facade alias
-        'BoxService' => 'App\Facades\Service\BoxServiceFacade',
-        'ConfigHelper' => '\App\Facades\Helper\ConfigHelperFacade',
+        // Helpers
+        'configHelper' => 'App\Facades\Helper\ConfigHelperFacade',
     ],
 
 ];

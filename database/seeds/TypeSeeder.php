@@ -20,6 +20,8 @@ class TypeSeeder extends Seeder
             'title' => 'GitHub',
             'slug' => 'github',
             'icon' => 'github',
+            'format' => '{commits:{label:"Commits",type:"text"}}',
+            'partial' => 'github',
         ]);
 
         DB::table('types')->insert([
@@ -27,6 +29,8 @@ class TypeSeeder extends Seeder
             'title' => 'Analytics: Users online (Live)',
             'slug' => 'analytics-online',
             'icon' => 'users',
+            'format' => '',
+            'partial' => 'analytics.online',
         ]);
 
         $this->command->info('Box types seeded');

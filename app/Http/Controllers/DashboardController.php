@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Facades\Service\InstallationServiceFacade as InstallationService;
+use App\Service\InstallationService;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -10,6 +10,14 @@ use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
 {
+    /** @var InstallationService */
+    protected $installationService;
+
+    public function __construct(InstallationService $installationService)
+    {
+        $this->installationService = $installationService;
+    }
+
     public function index()
     {
         return view('dashboard.index');
@@ -17,7 +25,7 @@ class DashboardController extends Controller
 
     public function validateInstallation()
     {
-        if (InstallationService::isInstalled()) {
+        if ($this->installationService->isInstalled()) {
             return redirect('/dashboard');
         }
 

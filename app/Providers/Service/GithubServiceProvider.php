@@ -1,10 +1,9 @@
 <?php
-
 namespace App\Providers\Service;
 
+use Illuminate\Support\ServiceProvider;
 use App\Service\GitHubService;
 use Illuminate\Foundation\Application;
-use Illuminate\Support\ServiceProvider;
 
 class GitHubServiceProvider extends ServiceProvider
 {

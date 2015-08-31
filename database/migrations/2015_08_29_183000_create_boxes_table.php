@@ -15,6 +15,7 @@ class CreateBoxesTable extends Migration
         Schema::create('boxes', function (Blueprint $table) {
             $table->string('id');
             $table->primary('id');
+            $table->text('data');
         });
     }
 

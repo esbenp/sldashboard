@@ -1,10 +1,8 @@
 <?php
-
 namespace App\Providers\Service;
 
-use App\Service\BoxService;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Foundation\Application;
 
 class BoxServiceProvider extends ServiceProvider
 {
@@ -15,8 +13,6 @@ class BoxServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('App\Service\BoxService', function(Application $application) {
-            return new BoxService();
-        });
+        $this->app->bind('App\Service\GitHubService', 'App\Service\BoxService');
     }
 }

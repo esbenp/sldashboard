@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Facades\Helper;
-
 use Illuminate\Support\Facades\Facade;
 
 class ConfigHelperFacade extends Facade
@@ -13,6 +12,6 @@ class ConfigHelperFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'configHelper';
+        return 'App\Provider\Helper\ConfigHelperProvider';
     }
 }
