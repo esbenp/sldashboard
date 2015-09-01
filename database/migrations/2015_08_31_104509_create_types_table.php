@@ -18,7 +18,7 @@ class CreateTypesTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->string('icon');
-            $table->text('format');
+            $table->text('format')->nullable();
             $table->string('partial');
             $table->timestamps();
         });
