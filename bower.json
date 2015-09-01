@@ -12,6 +12,7 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap-datepicker": "~1.4.0"
+    "bootstrap-datepicker": "~1.4.0",
+    "boostrap-sass": "~3.3.5"
   }
 }
