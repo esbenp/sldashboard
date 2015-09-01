@@ -22,6 +22,12 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-body">
+                    @if (isset($error))
+                        <div class="alert alert-error">{{$error}}</div>
+                    @endif
+                    @if (isset($msg))
+                        <div class="alert alert-success">{{$msg}}</div>
+                    @endif
                     @yield('content')
                 </div>
             </div>

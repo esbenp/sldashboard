@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Service\BoxService;
 use App\Service\GitHubService;
+use App\Service\UserService;
+use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -11,21 +13,61 @@ use App\Http\Controllers\Controller;
 
 class ConfigurationController extends Controller
 {
+    private $app;
+
     /** @var BoxService */
     protected $boxService;
 
     /** @var GitHubService */
     protected $gitHubService;
 
-    public function __construct(BoxService $boxService, GitHubService $gitHubService)
+    private $userService;
+
+    public function __construct(
+        Application $app,
+        BoxService $boxService,
+        GitHubService $gitHubService,
+        UserService $userService)
     {
+        $this->app = $app;
         $this->boxService = $boxService;
         $this->gitHubService = $gitHubService;
+        $this->userService = $userService;
     }
 
     public function index()
     {
         return view('configuration.index');
+    }
+
+    public function personal()
+    {
+        return view('configuration.user.personal', [
+            'user' => $this->app['auth']->user()
+        ]);
+    }
+
+    public function savePersonalSettings(Request $request)
+    {
+        $user = $this->app['auth']->user();
+
+        if ($user === null) {
+            return redirect('auth/login');
+        }
+
+        $response = $this->userService->update($user->id, $request->get('user', []));
+
+        if (isset($response['error'])) {
+            return view('configuration.user.personal', [
+                'error' => $response['error'],
+                'user' => $user
+            ]);
+        }
+
+        return view('configuration.user.personal', [
+            'msg' => _('Your settings were saved!'),
+            'user' => $user
+        ]);
     }
 
     public function dashboard(Request $request)

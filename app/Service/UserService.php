@@ -37,6 +37,37 @@ class UserService
     }
 
     /**
+     * Update users data
+     *
+     * @param  array  $data
+     * @return bool
+     */
+    public function update($id, array $data)
+    {
+        $user = User::find($id);
+
+        if ($user === null) {
+            return ['error' => _('No user was found.')];
+        }
+
+        $user->fill($data);
+
+        return $this->save($user);
+    }
+
+    /**
+     * Get users using a simple where clause
+     *
+     * @param  string $column
+     * @param  string $value
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function getWhere($column, $value)
+    {
+        return User::where($column, $value)->get();
+    }
+
+    /**
      * Save user
      *
      * @param User $user

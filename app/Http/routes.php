@@ -33,6 +33,8 @@ Route::get('/dashboard', ['middleware' => 'auth', 'uses' => 'DashboardController
 Route::group(['prefix' => 'configuration', 'middleware' => 'auth'], function () {
     Route::get('/', 'ConfigurationController@index');
 
+    Route::get('/personal', 'ConfigurationController@personal');
+    Route::post('/personal', 'ConfigurationController@savePersonalSettings');
     Route::get('/dashboard', 'ConfigurationController@dashboard');
 
     Route::get('/dashboard/{positionId}/{typeId}', 'ConfigurationController@dashboardBox');

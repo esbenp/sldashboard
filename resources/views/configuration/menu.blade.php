@@ -4,6 +4,11 @@
             <span class="fa fa-cogs"></span>&nbsp; {{_('General')}}
         </a>
     </li>
+    <li role="presentation" @if($page == 'personal') class="active" @endif>
+        <a href="{{URL::to('configuration/personal')}}">
+            <span class="fa fa-user"></span>&nbsp; {{_('Personal')}}
+        </a>
+    </li>
     <li role="presentation" @if($page == 'dashboard') class="active" @endif>
         <a href="{{URL::to('configuration/dashboard')}}">
             <span class="fa fa-dashboard"></span>&nbsp; {{_('Dashboard')}}

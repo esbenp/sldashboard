@@ -52,7 +52,7 @@ class Type extends Model
         if (is_null($this->format)) {
             return [];
         }
-
+        
         if (!$object = json_decode($this->format, true)) {
             throw new \Exception('Type format is not JSON');
         }
