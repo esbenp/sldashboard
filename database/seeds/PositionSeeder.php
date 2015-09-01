@@ -2,6 +2,7 @@
 
 namespace App\Seeds;
 
+use App\Models\Box\Position;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Webpatser\Uuid\Uuid;
@@ -15,20 +16,23 @@ class PositionSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('positions')->insert([
-            'id' => Uuid::generate(4),
-            'name' => 'left',
-        ]);
+        // Add transaction to secure against faulty errors
+        DB::beginTransaction();
 
-        DB::table('positions')->insert([
-            'id' => Uuid::generate(4),
-            'name' => 'center',
-        ]);
+        // Reset table
+        DB::table('positions')->truncate();
 
-        DB::table('positions')->insert([
-            'id' => Uuid::generate(4),
-            'name' => 'right',
-        ]);
+        $names = ['left', 'center', 'right'];
+        // We use models to avoid null constraint violations
+        // in the timestamp columns
+        foreach($names as $name) {
+            $position = new Position;
+            $position->id = Uuid::generate(4);
+            $position->name = $name;
+            $position->save();
+        }
+
+        DB::commit();
 
         $this->command->info('Box positions seeded');
     }
