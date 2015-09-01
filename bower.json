@@ -1,0 +1,17 @@
+{
+  "name": "sldashboard",
+  "version": "0.1.0",
+  "homepage": "https://github.com/spotonlive/sldashboard",
+  "description": "A cool dashboard",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-datepicker": "~1.4.0"
+  }
+}
