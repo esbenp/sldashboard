@@ -26,11 +26,11 @@ class TypeSeeder extends Seeder
 
         DB::table('types')->insert([
             'id' => Uuid::generate(4),
-            'title' => 'Analytics: Users online (Live)',
-            'slug' => 'analytics-online',
-            'icon' => 'users',
-            'format' => '',
-            'partial' => 'analytics.online',
+            'title' => 'Server status',
+            'slug' => 'server-status',
+            'icon' => 'server',
+            'format' => '{"url":{"options":{"label":"Url:","type":"text"}}}',
+            'partial' => 'server.status',
         ]);
 
         $this->command->info('Box types seeded');

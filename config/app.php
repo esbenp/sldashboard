@@ -160,12 +160,14 @@ return [
         'App\Providers\Service\GitHubServiceProvider',
         'App\Providers\Service\InstallationServiceProvider',
         'App\Providers\Service\UserServiceProvider',
+        'App\Providers\Service\ServerServiceProvider',
 
         // Helpers
         'App\Providers\Helper\ConfigHelperProvider',
         'App\Providers\Helper\DashboardHelperProvider',
         'App\Providers\Helper\FormHelperProvider',
         'App\Providers\Helper\GitHelperProvider',
+        'App\Providers\Helper\ServerHelperProvider',
     ],
 
     /*
@@ -222,6 +224,7 @@ return [
         'dashboardHelper' => 'App\Facades\Helper\DashboardHelperFacade',
         'formHelper' => 'App\Facades\Helper\FormHelperFacade',
         'gitHelper' => 'App\Facades\Helper\GitHelperFacade',
+        'serverHelper' => 'App\Facades\Helper\ServerHelperFacade',
     ],
 
 ];

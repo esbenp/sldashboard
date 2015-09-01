@@ -28,15 +28,18 @@
                         @foreach($position->boxes() as $box)
                             {? $type = $box->type() ?}
                             <li class="list-group-item">
-                                @if(!empty($type->icon))
-                                    <span class="fa fa-{{$type->icon}}"></span>&nbsp;&nbsp;
-                                @endif
+                                <div>
+                                    @if(!empty($type->icon))
+                                        <span class="fa fa-{{$type->icon}}"></span>&nbsp;&nbsp;
+                                    @endif
 
-                                <strong>{{$type->title}}</strong>
+                                    <strong>{{$type->title}}</strong>
 
-                                <a href="?remove={{$box->id}}" class="pull-right">
-                                    <span class="fa fa-remove"></span>
-                                </a>
+                                    <a href="?remove={{$box->id}}" class="pull-right">
+                                        <span class="fa fa-remove"></span>
+                                    </a>
+                                </div>
+                                <code><small>{{$box->data}}</small></code>
                             </li>
                         @endforeach
                         </div>
