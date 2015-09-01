@@ -3,6 +3,7 @@
 namespace App\Models\Box;
 
 use Illuminate\Database\Eloquent\Model;
+use Webpatser\Uuid\Uuid;
 
 class Type extends Model
 {
