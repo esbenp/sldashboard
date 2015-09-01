@@ -61,3 +61,14 @@ body{
 .top-bar ul li.text {
     margin-right: 15px;
 }
+
+/*
+ * BIRTHDAY WIDGET
+ */
+ .birthday-widget__cake {
+     float:left;
+ }
+
+ .birthday-widget__text {
+     font-size:30px;
+ }

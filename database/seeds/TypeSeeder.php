@@ -34,6 +34,16 @@ class TypeSeeder extends Seeder
 
         $type = new Type;
         $type->fill([
+            'title' => 'Birthday cake reminder',
+            'slug' => 'birthday-cake-reminder',
+            'icon' => 'birthday-cake',
+            'format' => null,
+            'partial' => 'users.birthday.birthday',
+        ]);
+        $type->save();
+
+        $type = new Type;
+        $type->fill([
             'title' => 'Server status',
             'slug' => 'server-status',
             'icon' => 'server',
