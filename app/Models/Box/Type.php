@@ -14,6 +14,14 @@ class Type extends Model
      */
     public $incrementing = false;
 
+    protected $fillable = [
+        'title',
+        'slug',
+        'icon',
+        'format',
+        'partial'
+    ];
+
     protected static function boot()
     {
         parent::boot();

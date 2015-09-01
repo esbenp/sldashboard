@@ -2,6 +2,7 @@
 
 namespace App\Seeds;
 
+use App\Models\Box\Type;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Webpatser\Uuid\Uuid;
@@ -15,23 +16,33 @@ class TypeSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('types')->insert([
-            'id' => Uuid::generate(4),
+        // Begin transaction to protect against faulty inserts
+        DB::beginTransaction();
+
+        // Reset table
+        DB::table('types')->truncate();
+
+        $type = new Type;
+        $type->fill([
             'title' => 'GitHub commits',
             'slug' => 'github-commits',
             'icon' => 'github',
             'format' => '{ "commits": { "options": { "label": "Commits:", "type": "text" } }, "repository": { "options":{ "label": "Repository:", "type": "select", "engine": "App\\\Service\\\GitHubService@getFormRepositories"}}}',
             'partial' => 'git.github.commits',
         ]);
+        $type->save();
 
-        DB::table('types')->insert([
-            'id' => Uuid::generate(4),
+        $type = new Type;
+        $type->fill([
             'title' => 'Server status',
             'slug' => 'server-status',
             'icon' => 'server',
             'format' => '{"url":{"options":{"label":"Url:","type":"text"}}}',
             'partial' => 'server.status',
         ]);
+        $type->save();
+
+        DB::commit();
 
         $this->command->info('Box types seeded');
     }
