@@ -22,8 +22,33 @@ class Type extends Model
         });
     }
 
+    /**
+     * Get boxes
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function boxes()
     {
         return $this->hasMany('App\Models\Box\Box', 'type_id');
+    }
+
+    /**
+     * Get format as object
+     *
+     * @return \stdClass
+     */
+    public function formatAsObject()
+    {
+        if (is_null($this->format)) {
+            return [];
+        }
+
+        $object = json_decode($this->format, true);
+
+        if (!$object = json_decode($this->format, true)) {
+            return new \Exception('Type format is not JSON');
+        }
+
+        return $object;
     }
 }

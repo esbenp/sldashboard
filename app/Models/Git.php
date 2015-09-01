@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models\Box;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Webpatser\Uuid\Uuid;
 
-class Position extends Model
+class Git extends Model
 {
     /**
      * Disable auto increment
@@ -21,13 +21,5 @@ class Position extends Model
         static::creating(function ($model) {
             $model->{$model->getKeyName()} = Uuid::generate(4);
         });
-    }
-
-    /**
-     * @return \App\Models\Box\Box[]
-     */
-    public function boxes()
-    {
-        return $this->hasMany('App\Models\Box\Box')->getResults();
     }
 }

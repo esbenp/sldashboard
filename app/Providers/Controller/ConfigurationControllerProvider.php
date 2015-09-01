@@ -19,7 +19,10 @@ class ConfigurationControllerProvider extends ServiceProvider
             /** @var \App\Service\BoxService $boxService */
             $boxService = $application->make('App\Service\BoxService');
 
-            return new ConfigurationController($boxService);
+            /** @var \App\Service\GitHubService $gitHubService */
+            $gitHubService = $application->make('App\Service\GitHubService');
+
+            return new ConfigurationController($boxService, $gitHubService);
         });
     }
 }

@@ -149,6 +149,7 @@ return [
          */
         Xinax\LaravelGettext\LaravelGettextServiceProvider::class,
         'Laravel\Socialite\SocialiteServiceProvider',
+        'App\Providers\BladeExtensionProvider',
 
         // Controllers
         'App\Providers\Controller\DashboardControllerProvider',
@@ -162,6 +163,9 @@ return [
 
         // Helpers
         'App\Providers\Helper\ConfigHelperProvider',
+        'App\Providers\Helper\DashboardHelperProvider',
+        'App\Providers\Helper\FormHelperProvider',
+        'App\Providers\Helper\GitHelperProvider',
     ],
 
     /*
@@ -215,6 +219,9 @@ return [
 
         // Helpers
         'configHelper' => 'App\Facades\Helper\ConfigHelperFacade',
+        'dashboardHelper' => 'App\Facades\Helper\DashboardHelperFacade',
+        'formHelper' => 'App\Facades\Helper\FormHelperFacade',
+        'gitHelper' => 'App\Facades\Helper\GitHelperFacade',
     ],
 
 ];

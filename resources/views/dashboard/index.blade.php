@@ -58,7 +58,27 @@
     </nav>
     <!-- Topbar end -->
 
+<div class="container-fluid dashboard">
+    <div class="row">
+        <!-- Left -->
+        <div class="col-md-4">
+            {!! dashboardHelper::showPosition('left') !!}
+        </div>
+
+        <!-- Center -->
+        <div class="col-md-4">
+            {!! dashboardHelper::showPosition('center') !!}
+        </div>
+
+        <!-- Right -->
+        <div class="col-md-4">
+            {!! dashboardHelper::showPosition('right') !!}
+        </div>
+    </div>
+</div>
+
     <!-- Dashboard -->
+    {{--
     <div class="container-fluid dashboard">
         <div class="row">
             <div class="col-md-4">
@@ -145,4 +165,5 @@
         </div>
     </div>
     <!-- Dashboard end -->
+    --}}
 @stop

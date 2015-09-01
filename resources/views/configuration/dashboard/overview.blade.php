@@ -24,16 +24,29 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="panel-body">
+                        <div class="list-group">
                         @foreach($position->boxes() as $box)
-                            {{$box->id}}
+                            {? $type = $box->type() ?}
+                            <li class="list-group-item">
+                                @if(!empty($type->icon))
+                                    <span class="fa fa-{{$type->icon}}"></span>&nbsp;&nbsp;
+                                @endif
+
+                                <strong>{{$type->title}}</strong>
+
+                                <a href="?remove={{$box->id}}" class="pull-right">
+                                    <span class="fa fa-remove"></span>
+                                </a>
+                            </li>
                         @endforeach
+                        </div>
                     </div>
                 </div>
             @endforeach
         </div>
     </div>
 
-    <!-- New position -->
+    <!-- New box -->
     <div class="modal fade" id="addBox" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -44,7 +57,7 @@
                 <div class="modal-body">
                     <div class="list-group">
                         @foreach($types as $type)
-                            <a href="#" class="list-group-item">
+                            <a href="#" onclick="box.select('{{$type->id}}')" class="list-group-item">
                                 @if(!empty($type->icon))
                                     <span class="fa fa-{{$type->icon}}"></span>&nbsp;&nbsp;
                                 @endif
@@ -53,9 +66,6 @@
                             </a>
                         @endforeach
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">{{_('Add box')}}</button>
                 </div>
             </div>
         </div>

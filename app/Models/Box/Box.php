@@ -28,8 +28,11 @@ class Box extends Model
         return $this->hasOne('App\Models\Box\Position', 'id', 'position_id');
     }
 
+    /**
+     * @return Type|null
+     */
     public function type()
     {
-        return $this->hasOne('App\Models\Box\Type', 'id', 'type_id');
+        return $this->belongsTo('App\Models\Box\Type', 'type_id')->getResults();
     }
 }

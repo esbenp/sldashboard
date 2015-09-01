@@ -16,6 +16,7 @@ class CreateBoxesTable extends Migration
             $table->string('id');
             $table->primary('id');
             $table->text('data');
+            $table->timestamps();
         });
     }
 

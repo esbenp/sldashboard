@@ -9,8 +9,8 @@
             <span class="fa fa-dashboard"></span>&nbsp; {{_('Dashboard')}}
         </a>
     </li>
-    <li role="presentation" @if($page == 'github') class="active" @endif>
-        <a href="#">
+    <li role="presentation" @if($page == 'gitHub') class="active" @endif>
+        <a href="{{URL::to('configuration/git/github')}}">
             <span class="fa fa-github"></span>&nbsp; {{_('GitHub')}}
         </a>
     </li>

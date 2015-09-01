@@ -32,7 +32,16 @@ Route::get('/dashboard', ['middleware' => 'auth', 'uses' => 'DashboardController
 // Configuration
 Route::group(['prefix' => 'configuration', 'middleware' => 'auth'], function () {
     Route::get('/', 'ConfigurationController@index');
+
     Route::get('/dashboard', 'ConfigurationController@dashboard');
+
+    Route::get('/dashboard/{positionId}/{typeId}', 'ConfigurationController@dashboardBox');
+    Route::post('/dashboard/{positionId}/{typeId}', 'ConfigurationController@dashboardBoxStore');
+
+    // Git
+    Route::group(['prefix' => 'git', ], function () {
+        Route::get('/github', 'ConfigurationController@gitHub');
+    });
 });
 
 // Authentication

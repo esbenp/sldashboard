@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTypesTable extends Migration
+class CreateGitsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,20 +12,12 @@ class CreateTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('types', function (Blueprint $table) {
+        Schema::create('gits', function (Blueprint $table) {
             $table->string('id');
             $table->primary('id');
-            $table->string('title');
-            $table->string('slug');
-            $table->string('icon');
-            $table->text('format');
-            $table->string('partial');
+            $table->string('service');
+            $table->string('data');
             $table->timestamps();
-        });
-
-        Schema::table('boxes', function($table)
-        {
-            $table->string('type_id');
         });
     }
 
@@ -36,6 +28,6 @@ class CreateTypesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('types');
+        Schema::drop('gits');
     }
 }
