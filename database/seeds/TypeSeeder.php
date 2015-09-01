@@ -17,11 +17,11 @@ class TypeSeeder extends Seeder
     {
         DB::table('types')->insert([
             'id' => Uuid::generate(4),
-            'title' => 'GitHub',
-            'slug' => 'github',
+            'title' => 'GitHub commits',
+            'slug' => 'github-commits',
             'icon' => 'github',
-            'format' => '{commits:{label:"Commits",type:"text"}}',
-            'partial' => 'github',
+            'format' => '{ "commits": { "options": { "label": "Commits:", "type": "text" } }, "repository": { "options":{ "label": "Repository:", "type": "select", "engine": "App\\\Service\\\GitHubService@getFormRepositories"}}}',
+            'partial' => 'git.github.commits',
         ]);
 
         DB::table('types')->insert([

@@ -35,7 +35,8 @@ class Type extends Model
     /**
      * Get format as object
      *
-     * @return \stdClass
+     * @return array|mixed
+     * @throws \Exception
      */
     public function formatAsObject()
     {
@@ -43,10 +44,8 @@ class Type extends Model
             return [];
         }
 
-        $object = json_decode($this->format, true);
-
         if (!$object = json_decode($this->format, true)) {
-            return new \Exception('Type format is not JSON');
+            throw new \Exception('Type format is not JSON');
         }
 
         return $object;
